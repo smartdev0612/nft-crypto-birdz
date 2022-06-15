@@ -47,9 +47,6 @@ module.exports = {
      network_id: "*",       // Any network (default: none)
     },
 
-    contracts_directory: './src/contracts',
-    contracts_build_directory: './src/abis',
-
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
@@ -76,6 +73,9 @@ module.exports = {
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
   },
+
+  contracts_directory: './src/contracts',
+  contracts_build_directory: './src/abis',
 
   // Set default mocha options here, use special reporters etc.
   mocha: {
