@@ -16,6 +16,16 @@ contract ERC721Enumerable is IERC721Enumerable, ERC721 {
     // mapping from token ID to index of the owner tokens list
     mapping(uint256 => uint256) private _ownedTokensIndex;
 
+    constructor() {
+        _registerInterface(
+            bytes4(
+                keccak256("totalSupply(bytes4)") ^
+                    keccak256("tokenByIndex(bytes4)") ^
+                    keccak256("tokenOfOwnerByIndex(bytes4)")
+            )
+        );
+    }
+
     /// @notice Count NFTs tracked by this contract
     /// @return A count of valid NFTs tracked by this contract, where each one of
     ///  them has an assigned and queryable owner not equal to the zero address
